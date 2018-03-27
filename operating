@@ -1,0 +1,17 @@
+Jeremy Pakalnis
+03/27/18
+
+1.	What are the names of the different semaphores?
+An alternative to a mutex is a semaphore. There are a couple different kinds of semaphores and they are: Dijkstan semaphore, Binary semaphore, mutex semaphore, and counting semaphore. The Dijikstan semaphore is a synchronization-tool invented in the 1960's. A semaphore is a negative integer variable that can only be changed or tested by these two indivisible functions: V operation: increment, P operation: test. This type of semaphore was difficult to implement with conventional instructions. It is the basis of all contemporary OS synchronization. There is also a binary semaphore which is also known as mutex-locks, which are locks that provide mutual exclusion. Takes either 0 or 1.
+
+2.	What is the purpose of a mutex?
+A mutex (mutual exculsion object) is an object that is created so that threads and multiple programs can take turns sharing the sane resource, such as access to a file or database.
+
+3.	What is the allowed maximum value for mutex?
+Techincally there is no maximum value for a mutex because the objects may change dynamically. However, in the use of a maximum value it uses a finite size buffer, which is defined as N. Many implementations place these objects into application memory, thus there is no explicit maximum. However, there is a cost to a mutex. The first point of interest in the cost is the waiting time. The threads should only spend a fraction of their time waiting on mutexes, they might lose their concurrency. The overhead cost of a mutex correlates with the processing of the CPU. With this the highest cost with implementing a system call is involved. 
+
+4.	Purpose of empty and full?
+With a binary semaphore which is also a mutex-lock, they take either 0 or 1. With this the main purpose is to count the number of empty and buffers. With this when you increase the mutex one can control the number of processes allowed in the critical section. The solution uses buffer to keep producer and consumer roughly synchronized. 
+
+5.	What are the allowed maximum values for both empty and null?
+Since the values in empty and null might change dynamically, N and the buffer size will be used to calculate the max values. For null usually the value will be 0 or a non-integer. 
