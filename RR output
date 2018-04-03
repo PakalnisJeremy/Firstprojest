@@ -1,0 +1,25 @@
+/usr/bin/python2.7 /Users/c85559/IdeaProjects/RoundRobin/RoundRobin.py
+ID [0], Arrival Time [8], Service Time [2], End Time [23], Initial Wait [12], Start Time [20]
+ID [1], Arrival Time [14], Service Time [4], End Time [50], Initial Wait [8], Start Time [22]
+ID [2], Arrival Time [21], Service Time [3], End Time [28], Initial Wait [4], Start Time [25]
+ID [3], Arrival Time [28], Service Time [5], End Time [51], Initial Wait [0], Start Time [28]
+ID [4], Arrival Time [34], Service Time [5], End Time [82], Initial Wait [16], Start Time [50]
+ID [5], Arrival Time [38], Service Time [5], End Time [84], Initial Wait [15], Start Time [53]
+ID [6], Arrival Time [42], Service Time [4], End Time [86], Initial Wait [14], Start Time [56]
+ID [7], Arrival Time [47], Service Time [3], End Time [62], Initial Wait [12], Start Time [59]
+ID [8], Arrival Time [54], Service Time [3], End Time [65], Initial Wait [8], Start Time [62]
+ID [9], Arrival Time [61], Service Time [3], End Time [68], Initial Wait [4], Start Time [65]
+ID [10], Arrival Time [68], Service Time [2], End Time [71], Initial Wait [0], Start Time [68]
+ID [11], Arrival Time [74], Service Time [5], End Time [102], Initial Wait [10], Start Time [84]
+ID [12], Arrival Time [79], Service Time [4], End Time [104], Initial Wait [8], Start Time [87]
+ID [13], Arrival Time [87], Service Time [5], End Time [105], Initial Wait [3], Start Time [90]
+ID [14], Arrival Time [95], Service Time [3], End Time [107], Initial Wait [9], Start Time [104]
+ID [15], Arrival Time [101], Service Time [5], End Time [119], Initial Wait [6], Start Time [107]
+ID [16], Arrival Time [108], Service Time [5], End Time [121], Initial Wait [2], Start Time [110]
+ID [17], Arrival Time [114], Service Time [4], End Time [132], Initial Wait [6], Start Time [120]
+ID [18], Arrival Time [121], Service Time [5], End Time [133], Initial Wait [2], Start Time [123]
+ID [19], Arrival Time [125], Service Time [3], End Time [129], Initial Wait [1], Start Time [126]
+('Average Wait Time: ', 7)
+('Average Turnaround Time: ', 13)
+
+Process finished with exit code 0
