@@ -1,0 +1,97 @@
+# -*- coding: utf-8 -*-
+
+from random import *
+
+lastarrival = 0  # define global variable to calculate last arrival time.
+class Process:
+
+    def __init__(self, id):
+        global lastarrival
+        self.id = id
+        self.serviceTime = randint(2, 5)
+        arrival = lastarrival + randint(4, 8)  # calculating which process come first and increments.
+        self.arrivalTime = arrival
+        lastarrival = arrival
+        self.currentTime = self.serviceTime  # keeps track of how much time is left in each process
+        self.complete = False  # Whether a process is actually finished
+        self.endTime = None  # process ends
+        self.initialWait = None
+        self.startTime = None
+
+    def is_complete(self, time):  # if current time <= 0, then process is done and end time = time.
+        if(self.currentTime <= 0):
+            self.complete = True
+            self.endTime = time  # if process is complete return time and quantum determines this.
+
+    def __str__(self):
+        return "ID [%s], Arrival Time [%s], Service Time [%s], End Time [%s], Initial Wait [%s], Start Time [%s]" % (self.id, self.arrivalTime, self.serviceTime, self.endTime, self.initialWait, self.startTime)
+
+    def run_process(self, time, quantum):  # If process hasn't been run yet set current time to service time.
+        if(self.currentTime == self.serviceTime):  # It then calculates initial arrival time by the initial wait.
+            self.startTime = time
+            self.initialWait = time - self.arrivalTime
+
+        self.currentTime = self.currentTime - quantum  # logging process has been run.
+        time = time + quantum  # moving forward in time
+        self.is_complete(time)
+        if(self.complete):
+            return (time - abs(self.currentTime))
+        else:
+            return (time)
+
+
+
+def program():  # simulating the Queue.
+    objs = [Process(i) for i in range(20)]  # creating a list with class process
+    time = 0
+    #print("Please Input quantum time")
+    quantum = 3
+    queue = True  # queue is set to boolean, if it set to false program ends.
+
+    # variables for average calculations
+    avgWait = 0
+    avgTurnaround = 0
+    while queue:  # while true program will run if there are no processes available.
+
+        if (readyJobs(objs, time)):  # passes in objects and loops through them and checks them if they are ready to run.
+
+            for obj in objs:
+                proceed = obj.complete
+                if not(proceed):
+                    queue = True
+                    break
+                queue = False  # stops the Queue if false
+            for obj in objs:
+                if not(obj.complete):
+                    if(obj.arrivalTime <= time):
+                        time = obj.run_process(time, quantum)
+                    else:
+                        time = time + 1
+
+        else:
+            time = time + 1
+
+    for obj in objs:  # printing everything out.
+        print(obj)
+        avgWait = avgWait + obj.initialWait
+        avgTurnaround = avgTurnaround + (obj.endTime - obj.startTime)
+    print("Average Wait Time: ", (avgWait / len(objs)))
+    print("Average Turnaround Time: ", (avgTurnaround / len(objs)))
+
+def readyJobs(objs, time):  # makes sure to check if there are running jobs and assigns arrival time
+    readyJobs = 0
+    for obj in objs:
+        if(obj.arrivalTime <= time):
+            readyJobs = readyJobs + 1
+
+    if(readyJobs >= 0):
+        return (True)
+    else:
+        return (False)
+
+
+
+
+
+
+program()  # start program
