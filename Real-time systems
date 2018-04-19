@@ -1,0 +1,13 @@
+Jeremy Pakalnis
+04/10/18
+Research Paper Operating Systems
+
+https://www3.nd.edu/~cpoellab/teaching/cse40463/azavodny2.pdf
+https://pdfs.semanticscholar.org/8dd7/e73b380ff8d26880411b9a2d4382b1c023f4.pdf
+https://stackoverflow.com/questions/17308956/differences-between-hard-real-time-soft-real-time-and-firm-real-time
+
+
+Real-Time Operating Systems
+
+In an ever-evolving world of computers researchers have looked into various ways to increase the effectiveness of operating systems in the real world. Whether it be for medical, business, or military use, operating systems control every complicated electronic machine. Real-time operating systems (RTOS) provide basic support for scheduling, communication, precise timing, I/O, resource management, and synchronization. 
+
